@@ -16,7 +16,7 @@ class GeminiAdapter:
 
     def generate(self, prompt: str, max_new_tokens: int = 100) -> str:
         response = self.gemini.generate_content(
-            messages=[{"role": "user", "content": prompt}],
+            f"{prompt}",
             generation_config=genai.types.GenerationConfig(
                 max_output_tokens=max_new_tokens,
             ),
